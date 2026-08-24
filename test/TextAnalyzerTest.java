@@ -19,4 +19,13 @@ public class TextAnalyzerTest {
 
         assertEquals(1, analyzer.getLineCount());
     }
+
+    @Test
+    void addingLineShouldCountCharacters() {
+        TextAnalyzer analyzer = new TextAnalyzer();
+
+        analyzer.addLine("Hej");
+
+        assertEquals(3, analyzer.getCharacterCount());
+    }
 }
