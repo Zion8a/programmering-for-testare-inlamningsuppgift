@@ -10,4 +10,13 @@ public class TextAnalyzerTest {
 
         assertEquals(0, analyzer.getLineCount());
     }
+
+    @Test
+    void addingOneLineShouldIncreaseLineCount() {
+        TextAnalyzer analyzer = new TextAnalyzer();
+
+        analyzer.addLine("Hej");
+
+        assertEquals(1, analyzer.getLineCount());
+    }
 }
