@@ -15,4 +15,7 @@ public class TextAnalyzer {
     public int getCharacterCount() {
         return characterCount;
     }
+    public boolean isStop(String line) {
+        return line.equals("stop");
+    }
 }

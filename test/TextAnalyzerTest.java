@@ -27,5 +27,13 @@ public class TextAnalyzerTest {
         analyzer.addLine("Hej");
 
         assertEquals(3, analyzer.getCharacterCount());
+
+
+    }
+    @Test
+    void stopShouldReturnTrue() {
+        TextAnalyzer analyzer = new TextAnalyzer();
+
+        assertEquals(true, analyzer.isStop("stop"));
     }
 }
