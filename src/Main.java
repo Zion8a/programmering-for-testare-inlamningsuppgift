@@ -18,7 +18,10 @@ public class Main {
 
         System.out.println("Antal rader: " + analyzer.getLineCount());
         System.out.println("Antal tecken: " + analyzer.getCharacterCount());
+        System.out.println("Antal ord: " + analyzer.getWordCount());
+        System.out.println("Längsta ordet: " + analyzer.getLongestWord());
 
         scanner.close();
     }
+
 }
