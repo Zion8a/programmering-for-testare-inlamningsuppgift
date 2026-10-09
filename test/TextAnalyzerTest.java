@@ -5,52 +5,82 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TextAnalyzerTest {
 
     @Test
-    void newAnalyzerShouldHaveZeroLines() {
+    public void newAnalyzerShouldHaveZeroLines() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        assertEquals(0, analyzer.getLineCount());
+        int actual = analyzer.getLineCount();
+        int expected = 0;
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void addingOneLineShouldIncreaseLineCount() {
+    public void addingOneLineShouldIncreaseLineCount() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        analyzer.addLine("Hej");
+        String text = "Hej";
 
-        assertEquals(1, analyzer.getLineCount());
+        analyzer.addLine(text);
+        int actual = analyzer.getLineCount();
+        int expected = 1;
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void addingLineShouldCountCharacters() {
+    public void addingLineShouldCountCharacters() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        analyzer.addLine("Hej");
+        String text = "Hej";
 
-        assertEquals(3, analyzer.getCharacterCount());
+        analyzer.addLine(text);
+        int actual = analyzer.getCharacterCount();
+        int expected = 3;
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void stopShouldReturnTrue() {
+    public void stopShouldReturnTrue() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        assertEquals(true, analyzer.isStop("stop"));
+        String text = "stop";
+
+        boolean actual = analyzer.isStop(text);
+        boolean expected = true;
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void addingLineShouldCountWords() {
+    public void addingLineShouldCountWords() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        analyzer.addLine("Hej Java");
+        String text = "Hej Java";
 
-        assertEquals(2, analyzer.getWordCount());
+        analyzer.addLine(text);
+        int actual = analyzer.getWordCount();
+        int expected = 2;
+
+        assertEquals(expected, actual);
     }
 
     @Test
-    void addingLineShouldFindLongestWord() {
+    public void addingLineShouldFindLongestWord() {
+
         TextAnalyzer analyzer = new TextAnalyzer();
 
-        analyzer.addLine("Hej programmering Java");
+        String text = "Hej programmering Java";
 
-        assertEquals("programmering", analyzer.getLongestWord());
+        analyzer.addLine(text);
+        String actual = analyzer.getLongestWord();
+        String expected = "programmering";
+
+        assertEquals(expected, actual);
     }
 }
